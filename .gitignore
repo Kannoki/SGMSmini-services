@@ -5,11 +5,16 @@ node_modules/
 dist/
 .next/
 out/
+build/
+tmp/
 
 # Environment
 .env
 .env.local
 .env.*.local
+.env.development
+.env.test
+.env.production
 
 # Content (docs/memory bank - excluded per request)
 content/
@@ -20,7 +25,17 @@ content/
 *.log
 .DS_Store
 Thumbs.db
+logs/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
 # Prisma
 *.db
 *.db-journal
+
+# Temp
+.temp
+.tmp

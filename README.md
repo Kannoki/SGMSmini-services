@@ -30,6 +30,3 @@ Open http://localhost:3000. Default redirects to `/letters`.
 1. Enable 2FA on your Google account
 2. Create an App Password: Google Account → Security → App passwords
 3. Put the 16-char password in `GMAIL_APP_PASSWORD` (with or without spaces)
-
-## Documentation
-See `content/` for Memory Bank and project docs.
