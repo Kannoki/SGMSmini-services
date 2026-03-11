@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #020617;
+  --bg-elevated: #020817;
+  --border-subtle: rgba(148, 163, 184, 0.3);
+}
+
+body {
+  @apply bg-slate-950 text-slate-50 antialiased;
+}
+
+.gradient-border {
+  border-radius: 9999px;
+  background: linear-gradient(120deg, rgba(129, 140, 248, 0.6), rgba(56, 189, 248, 0.5), rgba(248, 250, 252, 0.1));
+  padding: 1px;
+}
+
+.glass-panel {
+  background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.15), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.15), transparent 55%),
+    rgba(15, 23, 42, 0.9);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
+}
+
