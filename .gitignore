@@ -15,6 +15,7 @@ tmp/
 .env.development
 .env.test
 .env.production
+.env.example
 
 # Content (docs/memory bank - excluded per request)
 content/
@@ -39,3 +40,4 @@ lerna-debug.log*
 # Temp
 .temp
 .tmp
+backend/.env.example

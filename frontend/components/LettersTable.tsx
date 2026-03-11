@@ -50,6 +50,25 @@ export function LettersTable() {
   const [editing, setEditing] = useState<Letter | null>(null);
   const [form] = Form.useForm();
 
+  // #region agent log
+  fetch('http://127.0.0.1:7701/ingest/f1c9f799-d8f7-41a5-8476-5b07a41deac5', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Debug-Session-Id': 'e94476',
+    },
+    body: JSON.stringify({
+      sessionId: 'e94476',
+      runId: 'pre-fix',
+      hypothesisId: 'H1',
+      location: 'LettersTable.tsx:35',
+      message: 'LettersTable render',
+      data: { hasData: !!data, loading },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
+
   const letters = (data?.letters ?? []) as Letter[];
 
   const columns = [
