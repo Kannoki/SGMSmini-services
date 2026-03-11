@@ -1,0 +1,73 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateLetterInput {
+  body: String!
+  recipientEmails: [String!]! = []
+  subject: String!
+}
+
+input CreateScheduledJobInput {
+  cronExpression: String!
+  letterId: String!
+  recipientEmails: [String!]
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Letter {
+  body: String!
+  createdAt: DateTime!
+  id: ID!
+  recipientEmails: [String!]!
+  status: String!
+  subject: String!
+  updatedAt: DateTime!
+}
+
+type Mutation {
+  createLetter(input: CreateLetterInput!): Letter!
+  createScheduledJob(input: CreateScheduledJobInput!): ScheduledJob!
+  deleteLetter(id: ID!): Boolean!
+  deleteScheduledJob(id: ID!): Boolean!
+  pauseScheduledJob(id: ID!): ScheduledJob!
+  resumeScheduledJob(id: ID!): ScheduledJob!
+  sendLetterNow(letterId: ID!, recipients: [String!]): Letter!
+  updateLetter(id: ID!, input: UpdateLetterInput!): Letter!
+  updateScheduledJob(id: ID!, input: UpdateScheduledJobInput!): ScheduledJob!
+}
+
+type Query {
+  letter(id: ID!): Letter
+  letters: [Letter!]!
+  scheduledJob(id: ID!): ScheduledJob
+  scheduledJobs: [ScheduledJob!]!
+}
+
+type ScheduledJob {
+  createdAt: DateTime!
+  cronExpression: String!
+  id: ID!
+  lastRunAt: DateTime
+  letter: Letter!
+  letterId: ID!
+  nextRunAt: DateTime
+  recipientEmails: [String!]
+  status: String!
+  updatedAt: DateTime!
+}
+
+input UpdateLetterInput {
+  body: String
+  recipientEmails: [String!]
+  subject: String
+}
+
+input UpdateScheduledJobInput {
+  cronExpression: String
+  recipientEmails: [String!]
+}

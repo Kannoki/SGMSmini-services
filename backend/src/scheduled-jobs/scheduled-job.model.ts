@@ -21,10 +21,10 @@ export class ScheduledJob {
   @Field()
   status: string;
 
-  @Field({ nullable: true })
+  @Field(() => Date, { nullable: true })
   lastRunAt: Date | null;
 
-  @Field({ nullable: true })
+  @Field(() => Date, { nullable: true })
   nextRunAt: Date | null;
 
   @Field()

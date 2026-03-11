@@ -1,0 +1,115 @@
+services:
+  #Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: mail-sender-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mail-sender
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d mail-sender"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mail-sender-net
+  #Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mail-sender-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/mail-sender
+      GMAIL_USER: ${GMAIL_USER:-your@gmail.com}
+      GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD:-your-gmail-app-password}
+      PORT: 4000
+    ports:
+      - "4000:4000"
+    networks:
+      - mail-sender-net
+  #PGAdmin
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: mail-sender-pgadmin
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+    ports:
+      - "4001:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - mail-sender-net
+  #Mail App
+  mail-app:
+    build:
+      context: ./frontend-v2/mail-app
+      dockerfile: Dockerfile
+    container_name: mail-sender-mail-app
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_started
+    environment:
+      NEXT_PUBLIC_GRAPHQL_URL: http://localhost:4000/graphql
+      PORT: 3002
+    ports:
+      - "3002:3002"
+    networks:
+      - mail-sender-net
+  #Portfolio App
+  portfolio-app:
+    build:
+      context: ./frontend-v2/portfolio-app
+      dockerfile: Dockerfile
+    container_name: mail-sender-portfolio-app
+    restart: unless-stopped
+    environment:
+      PORT: 3001
+    ports:
+      - "3001:3001"
+    networks:
+      - mail-sender-net
+  #Host Frontend
+  host:
+    build:
+      context: ./frontend-v2/host
+      dockerfile: Dockerfile
+    container_name: mail-sender-host
+    restart: unless-stopped
+    depends_on:
+      mail-app:
+        condition: service_started
+      portfolio-app:
+        condition: service_started
+    environment:
+      PORT: 3000
+      MAIL_APP_URL: http://mail-app:3002
+      PORTFOLIO_APP_URL: http://portfolio-app:3001
+    ports:
+      - "3000:3000"
+    networks:
+      - mail-sender-net
+
+volumes:
+  pgdata:
+  pgadmin-data:
+
+networks:
+  mail-sender-net:
+    driver: bridge

@@ -28,3 +28,15 @@ a {
   color: #fff;
   background: rgba(255, 255, 255, 0.16);
 }
+
+.tab-link {
+  color: #1f2937;
+  background: #f3f4f6;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.tab-link:hover {
+  background: #e5e7eb;
+}

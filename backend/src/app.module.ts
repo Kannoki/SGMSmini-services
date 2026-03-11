@@ -8,6 +8,7 @@ import { LettersModule } from './letters/letters.module';
 import { ScheduledJobsModule } from './scheduled-jobs/scheduled-jobs.module';
 import { MailModule } from './mail/mail.module';
 import { HealthModule } from './health/health.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { HealthModule } from './health/health.module';
     }),
     PrismaModule,
     MailModule,
+    AuthModule,
     LettersModule,
     ScheduledJobsModule,
     HealthModule,
