@@ -21,6 +21,30 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@shared/*": [
+        "../*"
+      ],
+      "react": [
+        "./node_modules/@types/react/index.d.ts"
+      ],
+      "react-dom": [
+        "./node_modules/@types/react-dom/index.d.ts"
+      ],
+      "react/jsx-runtime": [
+        "./node_modules/@types/react/jsx-runtime.d.ts"
+      ],
+      "next/*": [
+        "./node_modules/next/*"
+      ],
+      "highcharts": [
+        "./node_modules/highcharts"
+      ],
+      "highcharts/*": [
+        "./node_modules/highcharts/*"
+      ],
+      "highcharts-react-official": [
+        "./node_modules/highcharts-react-official"
       ]
     },
     "types": [
@@ -37,7 +61,12 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../components/**/*.ts",
+    "../components/**/*.tsx",
+    "../features/**/*.ts",
+    "../features/**/*.tsx",
+    "../features/**/*.json"
   ],
   "exclude": [
     "node_modules"

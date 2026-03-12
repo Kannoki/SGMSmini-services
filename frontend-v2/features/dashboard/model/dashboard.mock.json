@@ -1,0 +1,178 @@
+{
+  "welcomeTitle": "Welcome back, {Username}",
+  "subtitle": "Measure your advertising ROI and report website traffic.",
+  "kpis": [
+    {
+      "id": "pageviews",
+      "title": "Pageviews",
+      "value": "50.8K",
+      "changePercent": 24.5,
+      "trend": "up",
+      "icon": "radio_button_checked"
+    },
+    {
+      "id": "monthlyUsers",
+      "title": "Monthly users",
+      "value": "23.6K",
+      "changePercent": 12.6,
+      "trend": "down",
+      "icon": "person"
+    },
+    {
+      "id": "newSignups",
+      "title": "New sign ups",
+      "value": "756",
+      "changePercent": 3.1,
+      "trend": "up",
+      "icon": "stars"
+    },
+    {
+      "id": "subscriptions",
+      "title": "Subscriptions",
+      "value": "2.3K",
+      "changePercent": 11.3,
+      "trend": "up",
+      "icon": "star"
+    }
+  ],
+  "revenue": {
+    "title": "Total revenue",
+    "value": "$240.8K",
+    "changePercent": 24.6,
+    "trend": "up",
+    "rangeLabel": "Jan 2024 - Dec 2024",
+    "series": [
+      {
+        "name": "Revenue",
+        "kind": "line",
+        "color": "#d946ef",
+        "points": [
+          { "label": "Jan", "value": 0 },
+          { "label": "Feb", "value": 12 },
+          { "label": "Mar", "value": 38 },
+          { "label": "Apr", "value": 92 },
+          { "label": "May", "value": 104 },
+          { "label": "Jun", "value": 101 },
+          { "label": "Jul", "value": 107 },
+          { "label": "Aug", "value": 128 },
+          { "label": "Sep", "value": 168 },
+          { "label": "Oct", "value": 196 },
+          { "label": "Nov", "value": 219 },
+          { "label": "Dec", "value": 236 }
+        ]
+      },
+      {
+        "name": "Expenses",
+        "kind": "line",
+        "color": "#0ea5e9",
+        "points": [
+          { "label": "Jan", "value": 24 },
+          { "label": "Feb", "value": 35 },
+          { "label": "Mar", "value": 18 },
+          { "label": "Apr", "value": 29 },
+          { "label": "May", "value": 76 },
+          { "label": "Jun", "value": 58 },
+          { "label": "Jul", "value": 63 },
+          { "label": "Aug", "value": 143 },
+          { "label": "Sep", "value": 156 },
+          { "label": "Oct", "value": 101 },
+          { "label": "Nov", "value": 57 },
+          { "label": "Dec", "value": 80 }
+        ]
+      }
+    ]
+  },
+  "insights": [
+    {
+      "id": "profit",
+      "title": "Total profit",
+      "value": "$144.6K",
+      "changePercent": 28.5,
+      "trend": "up",
+      "footerLabel": "Last 12 months",
+      "actionLabel": "View report",
+      "series": {
+        "name": "Total profit",
+        "kind": "bar",
+        "color": "#22d3ee",
+        "points": [
+          { "label": "12 AM", "value": 57 },
+          { "label": "2 AM", "value": 71 },
+          { "label": "4 AM", "value": 41 },
+          { "label": "6 AM", "value": 86 },
+          { "label": "8 AM", "value": 52 },
+          { "label": "10 AM", "value": 73 },
+          { "label": "12 PM", "value": 63 },
+          { "label": "2 PM", "value": 92 },
+          { "label": "4 PM", "value": 76 },
+          { "label": "6 PM", "value": 57 },
+          { "label": "8 PM", "value": 70 },
+          { "label": "10 PM", "value": 84 }
+        ]
+      }
+    },
+    {
+      "id": "sessions",
+      "title": "Total sessions",
+      "value": "400",
+      "changePercent": 16.8,
+      "trend": "up",
+      "footerLabel": "11 PM",
+      "actionLabel": "View report",
+      "liveTag": "Live",
+      "series": {
+        "name": "Sessions",
+        "kind": "spark",
+        "color": "#d946ef",
+        "points": [
+          { "label": "12 AM", "value": 14 },
+          { "label": "2 AM", "value": 30 },
+          { "label": "4 AM", "value": 20 },
+          { "label": "6 AM", "value": 41 },
+          { "label": "8 AM", "value": 29 },
+          { "label": "10 AM", "value": 26 },
+          { "label": "12 PM", "value": 22 },
+          { "label": "2 PM", "value": 39 },
+          { "label": "4 PM", "value": 68 },
+          { "label": "6 PM", "value": 18 },
+          { "label": "8 PM", "value": 19 },
+          { "label": "10 PM", "value": 42 },
+          { "label": "11 PM", "value": 15 }
+        ]
+      }
+    }
+  ],
+  "reportsTitle": "Reports overview",
+  "deviceTotal": 23648,
+  "deviceSegments": [
+    { "label": "Desktop users", "value": 15624, "color": "#d946ef" },
+    { "label": "Phone app users", "value": 5546, "color": "#818cf8" },
+    { "label": "Laptop users", "value": 2478, "color": "#0ea5e9" }
+  ],
+  "recentOrders": [
+    { "id": "#1532", "total": 329.4, "dateTime": "Dec 30, 10:06 AM", "status": "paid" },
+    { "id": "#1531", "total": 117.24, "dateTime": "Dec 29, 2:50 AM", "status": "pending" },
+    { "id": "#1530", "total": 52.16, "dateTime": "Dec 29, 12:54 AM", "status": "pending" },
+    { "id": "#1529", "total": 350.52, "dateTime": "Dec 28, 2:32 PM", "status": "paid" },
+    { "id": "#1528", "total": 246.78, "dateTime": "Dec 27, 2:20 PM", "status": "pending" },
+    { "id": "#1527", "total": 64.0, "dateTime": "Dec 26, 9:48 AM", "status": "paid" }
+  ],
+  "countriesTitle": "Users by country",
+  "countryTotal": "12.4 K",
+  "countryChangePercent": 28.5,
+  "countries": [
+    { "name": "United states", "percent": 30, "color": "#d946ef" },
+    { "name": "United Kingdom", "percent": 20, "color": "#818cf8" },
+    { "name": "Canada", "percent": 20, "color": "#0ea5e9" },
+    { "name": "Australia", "percent": 15, "color": "#22d3ee" },
+    { "name": "Spain", "percent": 15, "color": "#93c5fd" }
+  ],
+  "mapHighlights": [
+    { "x": "16%", "y": "44%", "size": 24, "tone": "pink" },
+    { "x": "43%", "y": "35%", "size": 24, "tone": "pink" },
+    { "x": "54%", "y": "63%", "size": 22, "tone": "pink" },
+    { "x": "73%", "y": "60%", "size": 24, "tone": "cyan", "valueLabel": "1.86 K", "countryLabel": "Australia" },
+    { "x": "82%", "y": "28%", "size": 23, "tone": "pink" },
+    { "x": "60%", "y": "20%", "size": 22, "tone": "pink" }
+  ]
+}
