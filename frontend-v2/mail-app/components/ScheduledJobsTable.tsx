@@ -12,7 +12,7 @@ import {
   RESUME_SCHEDULED_JOB,
   SCHEDULED_JOBS_QUERY,
 } from '@/lib/graphql/scheduled-jobs';
-import type { Letter, ScheduledJob } from '@/types';
+import type { Letter, ScheduledJob } from '@/model';
 
 const columnHelper = createColumnHelper<ScheduledJob>();
 const parseEmails = (value?: string) => (value ? value.split(/,\s*/).filter(Boolean) : undefined);

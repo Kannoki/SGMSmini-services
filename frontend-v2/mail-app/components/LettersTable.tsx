@@ -4,14 +4,8 @@ import { useMemo, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { Button, Form, Input, Modal, Popconfirm, Space, Tag, Typography, message } from 'antd';
-import {
-  CREATE_LETTER,
-  DELETE_LETTER,
-  LETTERS_QUERY,
-  SEND_LETTER_NOW,
-  UPDATE_LETTER,
-} from '@/lib/graphql/letters';
-import type { Letter } from '@/types';
+import { CREATE_LETTER, DELETE_LETTER, LETTERS_QUERY, SEND_LETTER_NOW, UPDATE_LETTER } from '@/lib/graphql/letters';
+import type { Letter } from '@/model';
 
 const { TextArea } = Input;
 const columnHelper = createColumnHelper<Letter>();

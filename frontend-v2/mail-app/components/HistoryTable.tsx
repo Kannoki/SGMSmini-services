@@ -5,7 +5,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { Button, Space, Tag, Typography, message } from 'antd';
 import { LETTERS_QUERY, SEND_LETTER_NOW } from '@/lib/graphql/letters';
-import type { Letter } from '@/types';
+import type { Letter } from '@/model';
 
 const columnHelper = createColumnHelper<Letter>();
 

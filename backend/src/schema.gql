@@ -9,8 +9,10 @@ input CreateLetterInput {
 }
 
 input CreateScheduledJobInput {
+  code: String
   cronExpression: String!
   letterId: String!
+  name: String
   recipientEmails: [String!]
 }
 
@@ -49,12 +51,14 @@ type Query {
 }
 
 type ScheduledJob {
+  code: String!
   createdAt: DateTime!
   cronExpression: String!
   id: ID!
   lastRunAt: DateTime
   letter: Letter!
   letterId: ID!
+  name: String!
   nextRunAt: DateTime
   recipientEmails: [String!]
   status: String!
@@ -68,6 +72,8 @@ input UpdateLetterInput {
 }
 
 input UpdateScheduledJobInput {
+  code: String
   cronExpression: String
+  name: String
   recipientEmails: [String!]
 }

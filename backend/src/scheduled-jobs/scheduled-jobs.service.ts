@@ -53,6 +53,8 @@ export class ScheduledJobsService {
     const nextRunAt = CronManagerService.getNextRun(input.cronExpression);
     const row = await this.prisma.scheduledJob.create({
       data: {
+        ...(input.name ? { name: input.name } : {}),
+        ...(input.code ? { code: input.code } : {}),
         letterId: input.letterId,
         cronExpression: input.cronExpression,
         recipientEmails: input.recipientEmails
@@ -68,6 +70,8 @@ export class ScheduledJobsService {
 
   async update(id: string, input: UpdateScheduledJobInput) {
     const data: Record<string, unknown> = {};
+    if (input.name != null) data.name = input.name;
+    if (input.code != null) data.code = input.code;
     if (input.cronExpression != null) {
       data.cronExpression = input.cronExpression;
       data.nextRunAt = CronManagerService.getNextRun(input.cronExpression);

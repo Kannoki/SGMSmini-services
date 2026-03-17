@@ -6,6 +6,12 @@ export class ScheduledJob {
   @Field(() => ID)
   id: string;
 
+  @Field()
+  name: string;
+
+  @Field()
+  code: string;
+
   @Field(() => ID)
   letterId: string;
 

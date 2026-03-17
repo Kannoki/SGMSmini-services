@@ -28,7 +28,9 @@ const fixedBottomItem: NavItem = {
   href: '/setting',
   label: 'Setting',
   icon: 'settings',
-  children: [{ id: 'setting-general', href: '/setting1', label: 'General', icon: 'tune' },{ id: 'setting-general2', href: '/setting2', label: 'General', icon: 'tune' },{ id: 'setting-general3', href: '/setting3', label: 'General', icon: 'tune' }],
+  children: [
+    { id: 'setting-cron-expendsion', href: '/setting/cron-expendsion', label: 'Clon Manager', icon: 'schedule' },
+  ],
 };
 
 const remoteItems: NavItem[] = [

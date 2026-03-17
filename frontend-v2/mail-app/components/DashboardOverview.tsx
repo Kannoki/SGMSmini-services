@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import { Card, Col, Row, Table, Tag, Typography } from 'antd';
 import { LETTERS_QUERY } from '@/lib/graphql/letters';
 import { SCHEDULED_JOBS_QUERY } from '@/lib/graphql/scheduled-jobs';
-import type { Letter, ScheduledJob } from '@/types';
+import type { Letter, ScheduledJob } from '@/model';
 
 const { Title } = Typography;
 

@@ -21,6 +21,8 @@ model Letter {
 
 model ScheduledJob {
   id              String   @id @default(uuid())
+  name            String   @default("Untitled Cron")
+  code            String   @unique @default(uuid())
   letterId        String
   letter          Letter   @relation(fields: [letterId], references: [id], onDelete: Cascade)
   cronExpression  String
