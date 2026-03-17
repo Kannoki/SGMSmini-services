@@ -3,14 +3,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 import { clearTokens } from '../lib/auth';
-
-type NavItem = {
-  id: string;
-  href: string;
-  label: string;
-  icon: string;
-  children?: NavItem[];
-};
+import type { HealthResponse, NavItem } from '../model/navigation';
 
 function MaterialIcon({ name, className }: { name: string; className?: string }) {
   return <span className={['material-symbols-rounded', className].filter(Boolean).join(' ')}>{name}</span>;
@@ -37,13 +30,6 @@ const remoteItems: NavItem[] = [
   { id: 'portfolio', href: '/portfolio', label: 'Portfolio', icon: 'work' },
   { id: 'mail', href: '/mail', label: 'Mail Manager', icon: 'mail' },
 ];
-
-type HealthResponse = {
-  apps: Array<{
-    id: string;
-    available: boolean;
-  }>;
-};
 
 export function Navbar() {
   const pathname = usePathname();

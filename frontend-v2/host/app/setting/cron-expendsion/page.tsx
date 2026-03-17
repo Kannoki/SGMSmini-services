@@ -2,15 +2,9 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import * as XLSX from 'xlsx';
-import { createCron, deleteCron, getCrons, type Cron, updateCron } from '../../../lib/crons';
-
-type CronForm = {
-  name: string;
-  code: string;
-  letterId: string;
-  cronExpression: string;
-  recipientEmails: string;
-};
+import { createCron, deleteCron, getCrons, updateCron } from '../../../lib/crons';
+import type { Cron } from '../../../model/cron';
+import type { CronForm } from '../../../model/cron-expendsion';
 
 const initialForm: CronForm = {
   name: '',

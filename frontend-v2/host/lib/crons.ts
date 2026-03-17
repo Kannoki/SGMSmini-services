@@ -1,13 +1,9 @@
 import { getAuthToken } from './auth';
+import type { Cron, RequestOptions, UpsertCronPayload } from '../model/cron';
 
 function getApiBaseUrl() {
   return process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:4000';
 }
-
-type RequestOptions = {
-  method?: 'GET' | 'POST' | 'PATCH' | 'DELETE';
-  body?: unknown;
-};
 
 async function request<T>(path: string, options: RequestOptions = {}) {
   const token = getAuthToken();
@@ -32,26 +28,6 @@ async function request<T>(path: string, options: RequestOptions = {}) {
 
   return (await response.json()) as T;
 }
-
-export type Cron = {
-  id: string;
-  name: string;
-  code: string;
-  letterId: string;
-  cronExpression: string;
-  recipientEmails: string[] | null;
-  status: string;
-  createdAt: string;
-  updatedAt: string;
-};
-
-export type UpsertCronPayload = {
-  name: string;
-  code: string;
-  letterId: string;
-  cronExpression: string;
-  recipientEmails?: string[];
-};
 
 export function getCrons() {
   return request<Cron[]>('/crons');

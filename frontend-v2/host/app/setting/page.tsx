@@ -1,14 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-
-type SettingTile = {
-  id: string;
-  label: string;
-  href: string;
-  icon: string;
-  className: string;
-};
+import type { SettingTile } from '../../model/setting';
 
 const tiles: SettingTile[] = [
   {

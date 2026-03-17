@@ -1,10 +1,7 @@
+import type { LoginResponse } from '../model/auth';
+
 const AUTH_TOKEN_KEY = 'auth_token';
 const REFRESH_TOKEN_KEY = 'refresh_token';
-
-export type LoginResponse = {
-  auth_token: string;
-  refresh_token: string;
-};
 
 function getApiBaseUrl() {
   return process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:4000';
